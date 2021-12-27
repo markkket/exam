@@ -1,0 +1,24 @@
+#include <iostream>//стандартная библиотека основных операций
+using namespace std;//облегчает ввод данных
+
+int main() //создаем функцию
+{
+    int length, height, i, j;//переменные для длины, ширины, счетчики
+    cout << "enter length: ";//введиите длину
+    cin >> length;
+    cout << "enter height: ";//введите ширину
+    cin >> height;
+
+    //создаем циклы
+
+    for (j = 0; j <= height - 1; j++)//цикл для высоты
+    {
+        cout << "*";
+
+        for (i = 0; i <= length - 1; i++)//цикл для ширины
+            cout << "*";
+        cout << "*" << endl;
+    }
+
+    system("pause");//системный вызов команды pause 
+}
