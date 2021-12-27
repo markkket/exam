@@ -1,0 +1,44 @@
+#include <iostream>//стандартная библиотека основных операций
+using namespace std;//облегчает ввод данных
+
+int main()//создаем функцию 
+{
+    int lines, columns;//создаем переменные для рядов и столбцов
+    int index = 1;//создаем индекс массива
+    //вводим данные
+    cout << "enter lines' number:";//введите кол-во рядов
+    cin >> lines;
+    cout << "enter columns' number: ";//введите кол-во столбцов 
+    cin >> columns;
+
+    int** matrix = new int* [lines]; //для доступа к матрице объявляется переменная matrix типа указатель на указатель на тип. Переменная инициализируется оператором new, который выделяет память для массива указателей на int.
+    for (int i = 0; i < lines; i++)//в цикле каждый элемент массива указателей инициализируется оператором new, который выделяет память для массива типа int
+    {
+        matrix[i] = new int[columns];
+    }
+    for (int i = 0; i < lines; i++)
+    {//i отвечает за строки,j отвечает за столбцы
+        for (int j = 0; j < columns; j++)
+        {
+            matrix[i][j] = index;
+            index++;
+        }
+
+    }
+    for (int i = 0; i < lines; i++)
+    {
+        for (int j = 0; j < columns; j++)
+        {
+            cout << matrix[i][j] << "\t";//выводится  матрица
+        }
+
+        cout << endl;
+    }
+    cout << endl;
+
+    for (int i = 0; i < lines; i++)// уничтожение
+    {
+        delete[] matrix[i];
+    }
+    delete matrix;
+}
