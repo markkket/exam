@@ -20,6 +20,7 @@ float avr (float* arr, int size){
     float avr = 0;
     for (int i = 0; i < size; i++){
         avr += arr[i];
+        
     }
     avr = avr / size;
     return avr;
